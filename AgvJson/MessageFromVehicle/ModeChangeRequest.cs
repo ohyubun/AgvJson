@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-/// <summary>
-/// Message Id : RequestVehicleReport
-/// Usage : request vehicle to report current state
+﻿/// <summary>
+/// Message Id : ModeChangeRequest
+/// Usage : Request online/offline change
 /// Primary : Y
-/// Secondary : RequestVehicleReportAck
-/// Trigger : any
-/// Direction : AGC -> Vehicle
+/// Secondary : CommonAck
+/// Trigger : Vehicle truns Online/Offline
+/// Direction : Vehicle -> AGC
 /// JSON example :
 /// 
 /// 
@@ -17,7 +16,7 @@
 
 namespace AgvJson
 {
-    public class RequestVehicleReport
+    public class ModeChangeRequest
     {
         /// <summary>
         /// Cyclic number that indicates this transaction is unique
@@ -31,10 +30,14 @@ namespace AgvJson
         /// </summary>
         public string VehicleId { get; set; }
         /// <summary>
-        /// 'BatteryStateReport'/'StatusChangeReport'
-        /// ex : 'BatteryStateReport'
+        /// ONLINE/OFFLINE
+        /// ex : 'ONLINE'
         /// </summary>
-        public string ReportId { get; set; }
-
+        public string Mode { get; set; }
+        /// <summary>
+        /// [mode change reason]
+        /// ex : '','PM','TroubleShooting',''
+        /// </summary>
+        public string Reason { get; set; }
     }
 }

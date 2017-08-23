@@ -16,23 +16,23 @@
 
 namespace AgvJson
 {
-    public class CommonAck
+    public class PrimaryMessage
     {
         /// <summary>
         /// a copy transaction name of primary message from vehicle
         /// 'AlarmReport'/'StatusChangeReport'/...
         /// ex : 'AlarmReport'
         /// </summary>
-        public string AckTransactionName { get; set; }
+        public string MessageId { get; set; }
         /// <summary>
         /// A copy transaction no of the primary 
         /// [1...65535]
         /// ex : 5
         /// </summary>
-        public int TransactionNo { get; set; }
+        public string ExpectedReply { get; set; }
         /// <summary>
         /// [0..99]
-        /// 0 : Accepted,1 : NG, 99 : other reason
+        /// 0 : OK,1 : NG, 99 : other reason
         /// ex : 0
         /// </summary>
         public int AckCode { get; set; } 

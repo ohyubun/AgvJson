@@ -24,12 +24,7 @@ namespace AgvJson
         /// [1...65535]
         /// ex : 5
         /// </summary>
-        public int TransactionNo { get; set; }
-        /// <summary>
-        /// ['AREA'][01...99]
-        /// ex : 'AREA45'
-        /// </summary>
-        public string Area { get; set; } 
+        public int TransactionNo { get; set; } 
         /// <summary>
         /// ['AGV'][0001...9999]
         /// ex : 'AGV0034'

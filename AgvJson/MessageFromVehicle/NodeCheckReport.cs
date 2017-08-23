@@ -25,11 +25,6 @@ namespace AgvJson
         /// </summary>
         public int TransactionNo { get; set; }
         /// <summary>
-        /// ['AREA'][01...99]
-        /// ex : 'AREA45'
-        /// </summary>
-        public string Area { get; set; } 
-        /// <summary>
         /// ['AGV'][0001...9999]
         /// ex : 'AGV0034'
         /// </summary>
@@ -41,16 +36,31 @@ namespace AgvJson
         /// </summary>
         public string CommandId { get; set; }
         /// <summary>
-        /// [001...999]
-        /// ex : '002'
+        /// [A...Z][0001...9999]
+        /// ex : 'A0002'
         /// </summary>
         public string NodeNo { get; set; }
         /// <summary>
-        /// radian difference from Virtual North Pole
+        /// Vehicle~
+        /// radian difference from Virtual North Pole at virtual X-Y coordinate
         /// [0.0000...-1.5700]
         /// ex : -0.01
         /// </summary>
-        public double VehicleDirection { get; set; }
+        public double Heading { get; set; }
+        /// <summary>
+        /// Vehicle~
+        /// X position at virtual X-Y coordinate
+        /// [any]
+        /// ex : -0.01
+        /// </summary>
+        public double X { get; set; }
+        /// <summary>
+        /// Vehicle~
+        /// Y position at virtual X-Y coordinate
+        /// [any]
+        /// ex : -0.01
+        /// </summary>
+        public double Y { get; set; }
         /// <summary>
         /// radian
         /// [0.0000...-1.5700]

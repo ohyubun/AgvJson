@@ -38,7 +38,7 @@ namespace AgvJson
         public string CommandId { get; set; }
         /// <summary>
         /// [0..99]
-        /// 0 : accepted,1 : Rejectd, 99 : other reason
+        /// 0 : Accepted,1 : Rejected, 99 : other reason
         /// ex : 0
         /// </summary>
         public int AckCode { get; set; } 

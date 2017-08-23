@@ -1,9 +1,10 @@
 ﻿/// <summary>
-/// Message Id : AlarmReport
-/// Usage : Report vehicle error
+/// Message Id : TransportStateReport 
+/// Usage : Report transport command executing status
 /// Primary : Y
 /// Secondary : CommonAck
-/// Trigger : Vehicle has trouble and stop working
+/// Trigger : (1)current transport command state
+///
 /// Direction : Vehicle -> AGC
 /// JSON example :
 /// 
@@ -16,7 +17,7 @@
 
 namespace AgvJson
 {
-    public class AlarmReport
+    public class TransportStateReport
     {
         /// <summary>
         /// Cyclic number that indicates this transaction is unique
@@ -36,20 +37,16 @@ namespace AgvJson
         /// </summary>
         public string CommandId { get; set; }
         /// <summary>
-        /// ['ALM-'][0001...0099]
-        /// ex : 'ALM-003'
+        /// 'START'/'END'/'ABORT'/'SUSPEND'/'RESUME'
+        /// 'FROM_ARRIVED'/'FROM_LEFT'/'TO_ARRIVED'/'TO_LEFT'/'CARRIER_ID_CHECKED'/'CARRIER_ID_MISMATCH'
+        /// ex : 'START'
         /// </summary>
-        public string AlarmCode { get; set; }
+        public string State { get; set; }
         /// <summary>
-        /// [error reason]
-        /// ex : 'Left servo motor overflow.'
+        ///[any]
+        /// if <State> equals to 'FROM_LEFT','TO_LEFT','CARRIER_ID_CHECKED','CARRIER_ID_MISMATCH',this property is meaningful 
+        /// ex : ERT-1233-34
         /// </summary>
-        public string Description { get; set; }
-        /// <summary>
-        /// true : occur,false : release
-        /// ex: true
-        /// </summary>
-        public bool State { get; set; }
-
+        public string CarrierId { get; set; }
     }
 }

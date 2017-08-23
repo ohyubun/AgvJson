@@ -45,11 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonAck.cs" />
     <Compile Include="MessageFromController\ModifyTransportCommand.cs" />
-    <Compile Include="MessageFromController\RequestVehicleReport.cs" />
-    <Compile Include="MessageFromController\RequestVehicleReportAck.cs" />
+    <Compile Include="MessageFromController\VehicleInformationRequest.cs" />
+    <Compile Include="MessageFromController\VehicleInformationRequestAck.cs" />
     <Compile Include="MessageFromController\TransportCommandAck.cs" />
     <Compile Include="MessageFromController\TransportCommand.cs" />
+    <Compile Include="MessageFromVehicle\RouteRequest.cs" />
+    <Compile Include="MessageFromVehicle\ModeChangeRequest.cs" />
+    <Compile Include="MessageFromVehicle\TransportStateReport .cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MessageFromVehicle\CommonAck.cs" />

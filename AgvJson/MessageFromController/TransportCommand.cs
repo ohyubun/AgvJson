@@ -43,24 +43,24 @@ namespace AgvJson
         public string CommandType { get; set; }
         /// <summary>
         ///[any]
-        /// if <CommandType> equals to 'CHARGING' or 'MAINTENANCE',this value is empty string
+        /// if <CommandType> equals to 'CHARGING' or 'MAINTENANCE',this property is empty string
         /// ex : ERT-1233-34
         /// </summary>
         public string CarrierId { get; set; }
         /// <summary>
-        /// [001...999]
-        /// if <CommandType> equals to 'CHARGING' or 'MAINTENANCE',this value is empty string
-        /// ex : 002
+        /// [A...Z][0001...9999]
+        /// if <CommandType> equals to 'CHARGING' or 'MAINTENANCE',this property is empty string
+        /// ex : A0002
         /// </summary>
         public string FromNodeNo { get; set; }
         /// <summary>
-        /// [001...999]
+        ///[A...Z][0001...9999]
         /// ex : 002
         /// </summary>
         public string ToNodeNo { get; set; }
         /// <summary>
         /// it indicates a series of node No. that vehicle has to visit between From and To
-        /// ex : 002,003,004,005
+        /// ex : A0002,A0003,A0004,A0005
         /// </summary>
         public List<string> TravelingPath { get; set; }
 

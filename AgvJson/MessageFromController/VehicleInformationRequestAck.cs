@@ -1,9 +1,9 @@
 ﻿/// <summary>
-/// Message Id : RequestVehicleReportAck
-/// Usage : Acknowledge for RequestVehicleReport
+/// Message Id : VehicleInformationRequestAck
+/// Usage : Acknowledge for VehicleInformationRequest
 /// Primary : RequestVehicleReport
 /// Secondary : Y
-/// Trigger : Vehicle received RequestVehicleReport
+/// Trigger : Vehicle received VehicleInformationRequest
 /// Direction :  Vehicle -> AGC
 /// JSON example :
 /// 
@@ -16,7 +16,7 @@
 
 namespace AgvJson
 {
-    public class RequestVehicleReportAck
+    public class VehicleInformationRequestAck
     {
         /// <summary>
         /// A copy transaction no of the primary 
@@ -31,7 +31,7 @@ namespace AgvJson
         public string ReportId { get; set; }
         /// <summary>
         /// [0..99]
-        /// 0 : accepted,1 : Rejectd, 99 : other reason
+        /// 0 : Accepted,1 : Rejected, 99 : other reason
         /// ex : 0
         /// </summary>
         public int AckCode { get; set; } 
