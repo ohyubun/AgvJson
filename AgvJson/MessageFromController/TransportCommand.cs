@@ -5,7 +5,7 @@
 /// Primary : Y
 /// Secondary : TransportCommandAck
 /// Trigger : any
-/// Direction : AGC -> Vehicle
+/// Direction : VMS -> Vehicle
 /// JSON example :
 /// 
 /// 
@@ -20,12 +20,6 @@ namespace AgvJson
     public class TransportCommand
     {
         /// <summary>
-        /// Cyclic number that indicates this transaction is unique
-        /// [1...65535]
-        /// ex : 5
-        /// </summary>
-        public int TransactionNo { get; set; }
-        /// <summary>
         /// a unique Id for tracking transportation
         /// ['CMD'][yyyyMMddhh][0001...9999]
         /// ex : 'CMD-201709131135001'
@@ -37,13 +31,13 @@ namespace AgvJson
         /// </summary>
         public string VehicleId { get; set; }
         /// <summary>
-        /// 'TRANSPORT'/'CHARGING'/'MAINTENANCE'
+        /// 'TRANSPORT'/'CHARGING'/'MAINTENANCE'/'STANDBY'
         /// ex : TRANSPORT
         /// </summary>
         public string CommandType { get; set; }
         /// <summary>
         ///[any]
-        /// if <CommandType> equals to 'CHARGING' or 'MAINTENANCE',this property is empty string
+        /// if <CommandType> equals to 'CHARGING','MAINTENANCE' or 'STANDBY',this property is empty string
         /// ex : ERT-1233-34
         /// </summary>
         public string CarrierId { get; set; }
@@ -62,7 +56,7 @@ namespace AgvJson
         /// it indicates a series of node No. that vehicle has to visit between From and To
         /// ex : A0002,A0003,A0004,A0005
         /// </summary>
-        public List<string> TravelingPath { get; set; }
+        public List<string> Route { get; set; }
 
     }
 }

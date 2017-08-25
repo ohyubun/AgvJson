@@ -1,9 +1,9 @@
 ﻿/// <summary>
-/// Message Id : VehicleInformationRequestAck
-/// Usage : Acknowledge for VehicleInformationRequest
-/// Primary : RequestVehicleReport
+/// Message Id : DateTimeRequestAck
+/// Usage : Acknowledge for DateTimeRequest
+/// Primary : DateTimeRequest
 /// Secondary : Y
-/// Trigger : Vehicle received VehicleInformationRequest
+/// Trigger : VMS received DateTimeRequest
 /// Direction :  Vehicle -> VMS
 /// JSON example :
 /// 
@@ -16,7 +16,7 @@
 
 namespace AgvJson
 {
-    public class VehicleInformationRequestAck
+    public class DateTimeRequestAck
     {
         /// <summary>
         /// 'BatteryStateReport'/'StatusChangeReport'
@@ -24,10 +24,9 @@ namespace AgvJson
         /// </summary>
         public string ReportId { get; set; }
         /// <summary>
-        /// [0..99]
-        /// 0 : Accepted,1 : Rejected, 99 : other reason
-        /// ex : 0
+        /// [yyyy/MM/dd,hh:mm:ss]
+        /// ex : 2017/11/15,14:35:42
         /// </summary>
-        public int AckCode { get; set; } 
+        public string Now { get; set; } 
     }
 }

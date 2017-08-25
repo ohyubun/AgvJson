@@ -3,8 +3,8 @@
 /// Usage : Acknowledge for general primary message
 /// Primary : any
 /// Secondary : Y
-/// Trigger : AGC received primary message
-/// Direction :  AGC -> Vehicle
+/// Trigger : VMS received primary message
+/// Direction :  VMS -> Vehicle
 /// JSON example :
 /// 
 /// 

@@ -5,7 +5,7 @@
 /// Primary : Y
 /// Secondary : VehicleInformationRequestAck
 /// Trigger : any
-/// Direction : AGC -> Vehicle
+/// Direction : VMS -> Vehicle
 /// JSON example :
 /// 
 /// 
@@ -19,12 +19,6 @@ namespace AgvJson
 {
     public class VehicleInformationRequest
     {
-        /// <summary>
-        /// Cyclic number that indicates this transaction is unique
-        /// [1...65535]
-        /// ex : 5
-        /// </summary>
-        public int TransactionNo { get; set; }
         /// <summary>
         /// ['AGV'][0001...9999]
         /// ex : 'AGV0034'

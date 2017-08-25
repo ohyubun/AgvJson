@@ -4,8 +4,8 @@
 /// Primary : Y
 /// Secondary : CommonAck
 /// Trigger : (1)Vehicle status or mode changed
-///           (2)AGC requests a current status report
-/// Direction : Vehicle -> AGC
+///           (2)VMS requests a current status report
+/// Direction : Vehicle -> VMS
 /// JSON example :
 /// 
 /// 
@@ -20,12 +20,6 @@ namespace AgvJson
     public class StatusChangeReport
     {
         /// <summary>
-        /// Cyclic number that indicates this transaction is unique
-        /// [1...65535]
-        /// ex : 5
-        /// </summary>
-        public int TransactionNo { get; set; }
-        /// <summary>
         /// ['AGV'][0001...9999]
         /// ex : 'AGV0034'
         /// </summary>
@@ -37,8 +31,8 @@ namespace AgvJson
         /// </summary>
         public string CommandId { get; set; }
         /// <summary>
-        /// 'RUN'/'DOWN'/'IDLE'/'WARNING'/'CHARGING'/'MAINTENANCE'
-        /// ex : 'DOWN'
+        /// 'RUN'/'DOWN'/'IDLE'/'WARNING'/'CHARGING'/'MAINTENANCE/’WALKING'
+        /// ex:'DOWN'
         /// </summary>
         public string Status { get; set; }
         /// <summary>

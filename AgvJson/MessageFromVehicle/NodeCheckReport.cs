@@ -4,7 +4,7 @@
 /// Primary : Y
 /// Secondary : CommonAck
 /// Trigger : Tag reader reports information
-/// Direction : Vehicle -> AGC
+/// Direction : Vehicle -> VMS
 /// JSON example :
 /// 
 /// 
@@ -18,12 +18,6 @@ namespace AgvJson
 {
     public class NodeCheckReport
     {
-        /// <summary>
-        /// Cyclic number that indicates this transaction is unique
-        /// [1...65535]
-        /// ex : 5
-        /// </summary>
-        public int TransactionNo { get; set; }
         /// <summary>
         /// ['AGV'][0001...9999]
         /// ex : 'AGV0034'

@@ -4,7 +4,7 @@
 /// Primary : Y
 /// Secondary : CommonAck
 /// Trigger : Vehicle has trouble and stop working
-/// Direction : Vehicle -> AGC
+/// Direction : Vehicle -> VMS
 /// JSON example :
 /// 
 /// 
@@ -18,12 +18,6 @@ namespace AgvJson
 {
     public class AlarmReport
     {
-        /// <summary>
-        /// Cyclic number that indicates this transaction is unique
-        /// [1...65535]
-        /// ex : 5
-        /// </summary>
-        public int TransactionNo { get; set; }
         /// <summary>
         /// ['AGV'][0001...9999]
         /// ex : 'AGV0034'

@@ -4,7 +4,7 @@
 /// Primary : TransportCommand
 /// Secondary : Y
 /// Trigger : Vehicle received TransportCommand
-/// Direction :  Vehicle -> AGC
+/// Direction :  Vehicle -> VMS
 /// JSON example :
 /// 
 /// 
@@ -24,12 +24,6 @@ namespace AgvJson
         /// ex : 'TransportCommand'
         /// </summary>
         public string AckTransactionName { get; set; }
-        /// <summary>
-        /// A copy transaction no of the primary 
-        /// [1...65535]
-        /// ex : 5
-        /// </summary>
-        public int TransactionNo { get; set; }
         /// <summary>
         /// a copy of primary message from controller
         /// ['CMD'][yyyyMMddhh][0001...9999]

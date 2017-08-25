@@ -1,9 +1,9 @@
 ﻿/// <summary>
-/// Message Id : RouteRequest
-/// Usage : Request route
+/// Message Id : DateTimeRequest
+/// Usage : Request online/offline change
 /// Primary : Y
-/// Secondary : RouteRequestAck
-/// Trigger : Vehicle turns to Online
+/// Secondary : DateTimeRequestAck
+/// Trigger : Vehicle truns Online or daily time sync
 /// Direction : Vehicle -> VMS
 /// JSON example :
 /// 
@@ -16,7 +16,7 @@
 
 namespace AgvJson
 {
-    public class RouteRequest
+    public class DateTimeRequest
     {
         /// <summary>
         /// ['AGV'][0001...9999]
