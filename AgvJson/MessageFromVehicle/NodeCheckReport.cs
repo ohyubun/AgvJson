@@ -2,7 +2,7 @@
 /// Message Id : NodeCheckReport
 /// Usage : Report node check result
 /// Primary : Y
-/// Secondary : CommonAck
+/// Secondary : NodeCheckReportAck
 /// Trigger : Tag reader reports information
 /// Direction : Vehicle -> VMS
 /// JSON example :
@@ -31,14 +31,15 @@ namespace AgvJson
         public string CommandId { get; set; }
         /// <summary>
         /// [A...Z][0001...9999]
+        /// (*)Reading error by fixed value 'NODE_ID_ERROR'
         /// ex : 'A0002'
         /// </summary>
         public string NodeNo { get; set; }
         /// <summary>
         /// Vehicle~
-        /// radian difference from Virtual North Pole at virtual X-Y coordinate
-        /// [0.0000...-1.5700]
-        /// ex : -0.01
+        /// angle degree difference from Virtual North Pole at virtual X-Y coordinate
+        /// [0...360]
+        /// ex : 90
         /// </summary>
         public double Heading { get; set; }
         /// <summary>
@@ -80,5 +81,21 @@ namespace AgvJson
         /// </summary>
         public double Y_Linear_Shift { get; set; }
 
+    }
+
+    public class NodeCheckReportAck
+    {
+        /// <summary>
+        /// [0..99]
+        /// 0 : Accepted,1 : NG, 99 : other reason
+        /// ex : 0
+        /// </summary>
+        public int AckCode { get; set; }
+        /// <summary>
+        /// any string
+        /// '', 'Busy','Alarm'.....
+        /// ex : 'Busy'
+        /// </summary>
+        public string Reason { get; set; }
     }
 }

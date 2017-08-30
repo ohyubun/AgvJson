@@ -25,10 +25,27 @@ namespace AgvJson
         /// </summary>
         public string VehicleId { get; set; }
         /// <summary>
+        /// A specified message list that vehicle needs to report all
         /// 'BatteryStateReport'/'StatusChangeReport'
-        /// ex : 'BatteryStateReport'
+        /// ex : {'BatteryStateReport','StatusChangeReport'}
         /// </summary>
-        public string ReportId { get; set; }
+        public List<string> ReportIdList { get; set; }
 
+    }
+
+    public class VehicleInformationRequestAck
+    {
+        /// <summary>
+        /// [0..99]
+        /// 0 : Accepted,1 : NG, 99 : other reason
+        /// ex : 0
+        /// </summary>
+        public int AckCode { get; set; }
+        /// <summary>
+        /// any string
+        /// '', 'Busy','Alarm'.....
+        /// ex : 'Busy'
+        /// </summary>
+        public string Reason { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 /// Message Id : StatusChangeReport
 /// Usage : Report vehicle status
 /// Primary : Y
-/// Secondary : CommonAck
+/// Secondary : StatusChangeReportAck
 /// Trigger : (1)Vehicle status or mode changed
 ///           (2)VMS requests a current status report
 /// Direction : Vehicle -> VMS
@@ -36,11 +36,6 @@ namespace AgvJson
         /// </summary>
         public string Status { get; set; }
         /// <summary>
-        /// 'OBSTACLE'/'TRAFFIC_JAM'/'COLLISION'/''
-        /// ex : 'OBSTACLE'
-        /// </summary>
-        public string SubStatus { get; set; }
-        /// <summary>
         /// radian difference from Virtual North Pole at virtual X-Y coordinate
         /// [0.0000...-1.5700]
         /// ex : -0.01
@@ -58,5 +53,21 @@ namespace AgvJson
         /// ex : -0.01
         /// </summary>
         public double Y { get; set; }
+    }
+
+    public class StatusChangeReportAck
+    {
+        /// <summary>
+        /// [0..99]
+        /// 0 : Accepted,1 : NG, 99 : other reason
+        /// ex : 0
+        /// </summary>
+        public int AckCode { get; set; }
+        /// <summary>
+        /// any string
+        /// '', 'Busy','Alarm'.....
+        /// ex : 'Busy'
+        /// </summary>
+        public string Reason { get; set; }
     }
 }

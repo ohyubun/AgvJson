@@ -2,7 +2,7 @@
 /// Message Id : BatteryStateReport
 /// Usage : Report battery state
 /// Primary : Y
-/// Secondary : CommonAck
+/// Secondary : BatteryStateReportAck
 /// Trigger : (1)Battery statistics changed
 ///           (2)VMS requests a current state report
 /// Direction : Vehicle -> VMS
@@ -42,23 +42,44 @@ namespace AgvJson
         /// </summary>
         public double Capacity { get; set; }
         /// <summary>
-        /// trigger is same as <BatteryCapacity>
+        /// trigger is same as <Capacity>
         /// [00...100]
         /// ex : 80
         /// </summary>
         public double Current { get; set; }
         /// <summary>
-        /// trigger is same as <BatteryCapacity>
+        /// trigger is same as <Capacity>
         /// [00...100]
         /// ex : 45
         /// </summary>
         public double Temperature { get; set; }
         /// <summary>
-        /// trigger is same as <BatteryCapacity>
+        /// trigger is same as <Capacity>
         /// [00...1000]
         /// ex : 80
         /// </summary>
         public double Power { get; set; }
+        /// <summary>
+        /// trigger is same as <Capacity>
+        /// [0...999999]
+        /// ex : 8906766.5
+        /// </summary>
+        public double WorkingTime { get; set; }
+    }
 
+    public class BatteryStateReportAck
+    {
+        /// <summary>
+        /// [0..99]
+        /// 0 : Accepted,1 : NG, 99 : other reason
+        /// ex : 0
+        /// </summary>
+        public int AckCode { get; set; }
+        /// <summary>
+        /// any string
+        /// '', 'Busy','Alarm'.....
+        /// ex : 'Busy'
+        /// </summary>
+        public string Reason { get; set; }
     }
 }

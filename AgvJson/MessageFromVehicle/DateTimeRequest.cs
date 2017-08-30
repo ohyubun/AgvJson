@@ -13,6 +13,7 @@
 /// 
 /// 
 /// </summary>
+using System;
 
 namespace AgvJson
 {
@@ -23,5 +24,13 @@ namespace AgvJson
         /// ex : 'AGV0034'
         /// </summary>
         public string VehicleId { get; set; }
+    }
+
+    public class DateTimeRequestAck
+    {
+        /// <summary>
+        /// ex : 2017-08-28T12:24:30.9816423+08:00
+        /// </summary>
+        public DateTime Now { get; set; }
     }
 }

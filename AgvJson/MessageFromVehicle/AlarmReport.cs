@@ -2,7 +2,7 @@
 /// Message Id : AlarmReport
 /// Usage : Report vehicle error
 /// Primary : Y
-/// Secondary : CommonAck
+/// Secondary : AlarmReportAck
 /// Trigger : Vehicle has trouble and stop working
 /// Direction : Vehicle -> VMS
 /// JSON example :
@@ -30,8 +30,16 @@ namespace AgvJson
         /// </summary>
         public string CommandId { get; set; }
         /// <summary>
-        /// ['ALM-'][0001...0099]
-        /// ex : 'ALM-003'
+        /// Trouble Level
+        /// 1: warning - light trouble that ahs no impact on operation,
+        /// 2: alarm- heavy trouble that causes operation suspend, but operator can recover
+        /// 3: exception- heavy trouble that cause operation termination unexpectedly
+        /// ex : 2
+        /// </summary>
+        public int Severity { get; set; }
+        /// <summary>
+        /// ['ALM-'][0001...9999]
+        /// ex : 'ALM-0003'
         /// </summary>
         public string AlarmCode { get; set; }
         /// <summary>
@@ -45,5 +53,21 @@ namespace AgvJson
         /// </summary>
         public bool State { get; set; }
 
+    }
+
+    public class AlarmReportAck
+    {
+        /// <summary>
+        /// [0..99]
+        /// 0 : Accepted,1 : NG, 99 : other reason
+        /// ex : 0
+        /// </summary>
+        public int AckCode { get; set; }
+        /// <summary>
+        /// any string
+        /// '', 'Busy','Alarm'.....
+        /// ex : 'Busy'
+        /// </summary>
+        public string Reason { get; set; }
     }
 }

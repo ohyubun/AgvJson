@@ -59,4 +59,20 @@ namespace AgvJson
         public List<string> Route { get; set; }
 
     }
+
+    public class TransportCommandAck
+    {
+        /// <summary>
+        /// [0..99]
+        /// 0 : Accepted,1 : Rejected, 99 : other reason
+        /// ex : 0
+        /// </summary>
+        public int AckCode { get; set; }
+        /// <summary>
+        /// any string
+        /// '', 'Busy','Alarm'.....
+        /// ex : 'Busy'
+        /// </summary>
+        public string Reason { get; set; }
+    }
 }
