@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageFromController\PilotCommand.cs" />
     <Compile Include="MessageFromController\ModifyTransportCommand.cs" />
+    <Compile Include="MessageFromController\JoggingCommand.cs" />
     <Compile Include="MessageFromController\VehicleInformationRequest.cs" />
     <Compile Include="MessageFromController\TransportCommand.cs" />
     <Compile Include="MessageFromVehicle\DateTimeRequest.cs" />
